@@ -1,0 +1,6 @@
+[version]
+version = "1.0"
+
+[[dependencies]]
+platform = "python"
+version = "3.11.8"
