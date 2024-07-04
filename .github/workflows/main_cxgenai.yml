@@ -68,6 +68,9 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_343A816A45424EAEA4DDAEC85EE1CBD0 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2949B3342D14412290FB3C789EBA5CCD }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_AABCC4AD87B142A4AD7E349D1EE21DD0 }}
+          
+      - name: Set environment variables
+        run: echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> $GITHUB_ENV
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2

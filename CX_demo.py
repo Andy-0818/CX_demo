@@ -3,10 +3,12 @@ from flask import Flask, request, jsonify
 import openai
 import json
 import requests
+import os
 import Flight_info as fi
 
 app = Flask(__name__)
-client = openai.OpenAI(api_key = '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')
+openai_api_key = os.getenv('OPENAI_API_KEY')
+client = openai.OpenAI(api_key = openai_api_key)
 
 @app.route('/flight', methods=['GET'])
 def handle_request():
